@@ -20,6 +20,7 @@ services:
     image: apex-service:18.2
     ports: 
       - 8080:8080
+      - 8443:8443
     environment:  
       DB_HOSTNAME: oradb
       DB_PORT: 1521
@@ -28,6 +29,9 @@ services:
       SYS_PASSWORD: Oracle12c
       ORDS_PW: apex
     restart: always
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - ./server.xml:/usr/local/tomcat/conf/server.xml
 
 volumes: 
   oradb_data:
