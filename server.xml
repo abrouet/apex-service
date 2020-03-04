@@ -1,0 +1,10 @@
+   <Connector port="8443" protocol="org.apache.coyote.http11.Http11AprProtocol"
+              maxThreads="150" SSLEnabled="true" >
+	   <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
+		 <SSLHostConfig>
+       <Certificate certificateKeyFile="/etc/letsencrypt/live/v75inc.com/privkey.pem"
+                    certificateFile="/etc/letsencrypt/live/v75inc.com/cert.pem"
+                    certificateChainFile="/etc/letsencrypt/live/v75inc.com/chain.pem"
+                    type="RSA" />
+			</SSLHostConfig>
+	</Connector>
